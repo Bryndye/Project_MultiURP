@@ -1,0 +1,21 @@
+using System.Collections.Generic;
+using Unity.Netcode;
+using System.Collections;
+using UnityEngine;
+
+public class PlayerNetworkTest : NetworkBehaviour
+{
+    public NetworkVariable<ushort> Score = new (0,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Server);
+
+    private void Update()
+    {
+
+    }
+
+    // Call from the server
+    [ContextMenu("Add Score")]
+    private void AddSccore(/*ushort _score*/)
+    {
+        Score.Value += 1;
+    }
+}
