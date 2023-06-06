@@ -14,8 +14,8 @@ public class PlayerNetworkTest : NetworkBehaviour
 
     // Call from the server
     [ContextMenu("Add Score")]
-    private void AddSccore(/*ushort _score*/)
+    public void AddScore(ushort _score = 1)
     {
-        Score.Value += 1;
+        Score.Value += _score;
     }
 }
