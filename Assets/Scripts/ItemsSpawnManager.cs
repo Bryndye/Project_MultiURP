@@ -23,7 +23,6 @@ public class ItemsSpawnManager : MonoBehaviour
         NetworkObjectPool.Singleton.OnNetworkSpawn();
         for (int i = 0; i < 5; i++)
         {
-            Debug.Log("shish");
             SpawnItem();
         }
     }

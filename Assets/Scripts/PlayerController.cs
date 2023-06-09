@@ -1,10 +1,13 @@
 using Unity.Netcode;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : NetworkBehaviour
 {
     private Vector2 inputMovement;
-
+    [SerializeField] private ushort speedWalk = 10;
+    [SerializeField] private ushort speedRun = 15;
     public override void OnNetworkSpawn() // INIT gameObject when spawn on network
     { 
         base.OnNetworkSpawn();
@@ -16,9 +19,9 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        inputMovement.x = Input.GetAxis("Horizontal");
-        inputMovement.y = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(inputMovement.x, 0, inputMovement.y) * Time.deltaTime;
+
+
+        Vector3 movement = new Vector3(inputMovement.x, 0, inputMovement.y) * Time.deltaTime * speedWalk;
         transform.Translate(movement, Space.Self);
     }
 
@@ -26,4 +29,26 @@ public class PlayerController : NetworkBehaviour
     {
         
     }
+
+    #region Handle
+    public void InputMovement(InputAction.CallbackContext context)
+    {
+        inputMovement = context.ReadValue<Vector2>();
+    }
+
+    public void InputSprint(InputAction.CallbackContext context)
+    {
+        //
+    }
+
+    public void InputJump(InputAction.CallbackContext context)
+    {
+        //
+    }
+
+    public void InputCrouch(InputAction.CallbackContext context)
+    {
+        //
+    }
+    #endregion
 }
