@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 129
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9db51329c4a839546b1183439d05649c, type: 2}
   m_sharedMaterial: {fileID: 5357268697224561616, guid: 9db51329c4a839546b1183439d05649c,
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 315, y: 200}
-  m_SizeDelta: {x: 630, y: 400}
+  m_AnchoredPosition: {x: 315, y: 100}
+  m_SizeDelta: {x: 630, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7503294823995820109
 GameObject:
@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 3211346417076135136}
   - component: {fileID: 9197490790796959903}
   - component: {fileID: 4949260245700200285}
+  - component: {fileID: 391511452382099617}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -456,13 +457,13 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 31
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -507,3 +508,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &391511452382099617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171613269224244533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c26baaf2cc024241847cd83e113fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health_bar: {fileID: 3520092135672017705}
+  health_text: {fileID: 5444105858954408233}

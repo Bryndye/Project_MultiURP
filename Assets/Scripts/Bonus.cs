@@ -14,9 +14,9 @@ public class Bonus : NetworkBehaviour
             return;
         }
 
-        if (other.TryGetComponent(out PlayerNetworkTest _scorePlayer))
+        if (other.TryGetComponent(out PlayerHealth _healthPlayer))
         {
-            _scorePlayer.AddScore(5);
+            _healthPlayer.RemoveHealth(10);
         }
 
         NetworkObject.Despawn(); // Dispawn THIS gameObject & return to the poolSystem
